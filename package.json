@@ -1,0 +1,34 @@
+{
+  "name": "reasonreact-example-list",
+  "version": "0.1.0",
+  "description": "A ReasonReact example application that renders a list of items from localstorage and perform basic operations on it.",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w -ws _ ",
+    "clean": "bsb -clean-world",
+    "server": "moduleserve ./ --port 8000 --spa",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varunmulloli/reasonreact-example-list.git"
+  },
+  "keywords": [
+    "reasonml",
+    "bucklescript",
+    "react"
+  ],
+  "author": "varunmulloli",
+  "license": "MIT",
+  "dependencies": {
+    "@glennsl/bs-json": "^5.0.2",
+    "bs-css-emotion": "^1.1.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "reason-react": ">=0.7.0"
+  },
+  "devDependencies": {
+    "bs-platform": "^6.2.1",
+    "moduleserve": "^0.9.1"
+  }
+}
