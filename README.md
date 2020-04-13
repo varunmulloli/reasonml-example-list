@@ -3,7 +3,7 @@ A ReasonReact example application that renders a list of items from localstorage
 
 ## Getting started
 
-To get the frontend running locally:
+To get the app running locally:
 
 ```
 git clone https://github.com/varunmulloli/reasonreact-example-list.git
