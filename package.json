@@ -4,6 +4,7 @@
   "description": "A ReasonReact example application that renders a list of items from localstorage and perform basic operations on it.",
   "scripts": {
     "build": "bsb -make-world",
+    "bundle": "webpack",
     "start": "bsb -make-world -w -ws _ ",
     "clean": "bsb -clean-world",
     "server": "moduleserve ./ --port 8000 --spa",
@@ -29,6 +30,8 @@
   },
   "devDependencies": {
     "bs-platform": "^6.2.1",
-    "moduleserve": "^0.9.1"
+    "moduleserve": "^0.9.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }

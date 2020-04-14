@@ -8,9 +8,8 @@ module type ListServiceSignature = {
 module LocalStorage : ListServiceSignature = {
   let appName: string = "reasonreact_example_list";
 
-  let emitErrorAsLogAndIgnore = (message) => {
+  let emitErrorAsLogAndIgnore = (message: exn) => {
     Js.Console.error(message);
-    None;
   };
 
   let writeToLocalStorage = (content: string) : unit => {
