@@ -1,6 +1,10 @@
 # reasonreact-example-list
 A ReasonReact example application that renders a list of items from localstorage and perform basic operations on it.
 
+## Demo
+
+To see the app in action, check out [https://varunmulloli.github.io/reasonreact-example-list/](https://varunmulloli.github.io/reasonreact-example-list/)
+
 ## Getting started
 
 To get the app running locally:
