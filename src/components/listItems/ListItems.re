@@ -22,7 +22,7 @@ let reducer = (state: Types.listData, action: listAction) : Types.listData =>
 };
 
 let displayListItem = 
-  (openModal: int => unit, setNewName: string => unit) => 
+  (openModal: int => unit, deleteItem: int => unit, setNewName: string => unit) => 
   (index: int, listItem: Types.listItem) : React.element => {
 
   let openModalAndPrefillInputField = _ => {
@@ -30,13 +30,20 @@ let displayListItem =
     setNewName(listItem.name); 
   };
 
+  let deleteCurrentItem = _ => {
+    deleteItem(listItem.id);
+  };
+
   <div key=string_of_int(index) className=ListItemsCSS.listItemContainer title=("Open " ++ listItem.name)>
     <div className=ListItemsCSS.listItem>
       {React.string(listItem.name)}
     </div>
 
-    <div className=ListItemsCSS.editButton title=("Edit " ++ listItem.name) onClick=openModalAndPrefillInputField>
-      <img src="/public/edit.png" width="20" />
+    <div className=ListItemsCSS.actionButton title=("Edit " ++ listItem.name) onClick=openModalAndPrefillInputField>
+      <img src="./public/edit.png" width="20" />
+    </div>
+    <div className=ListItemsCSS.actionButton title=("Delete " ++ listItem.name) onClick=deleteCurrentItem>
+      <img src="./public/delete.png" width="20" />
     </div>
   </div>
 };
@@ -80,8 +87,9 @@ let make = () => {
   let setNewName = (name: string) : unit=> setItemName(_ => name);
   let dispatchCreateAction = (name: string) : unit => dispatch(CreateNew(name));
   let dispatchEditAction = (id: int) => (name: string) : unit => dispatch(Edit(id, name));
+  let dispatchDeleteAction = (id: int) : unit => dispatch(Delete(id));
 
-  let renderListItem = displayListItem(openModalForEdit, setNewName);
+  let renderListItem = displayListItem(openModalForEdit, dispatchDeleteAction, setNewName);
   let renderModal = displayModal(closeModal, itemName, setNewName);
   
   React.useEffect0(() => {

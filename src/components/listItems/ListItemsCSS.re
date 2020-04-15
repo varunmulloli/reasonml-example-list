@@ -33,7 +33,7 @@ let listItem = style([
   ]),
 ]);
 
-let editButton = style([
+let actionButton = style([
   width(px(25)),
   textAlign(`right),
   paddingTop(px(4)),
